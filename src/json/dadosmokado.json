@@ -1,0 +1,192 @@
+[
+    {
+      "titulo": "Novo recurso lançado",
+      "texto": "Estamos felizes em anunciar o lançamento de um novo recurso na nossa plataforma.",
+      "avatar": "https://example.com/avatar1.jpg",
+      "usuáriodocmentario": "joao_silva",
+      "like": 10,
+      "comentario": [
+        {
+          "usuáriodocmentario": "ana_pereira",
+          "texto": "Ótima notícia!",
+          "like": 2
+        },
+        {
+          "usuáriodocmentario": "maria_santos",
+          "texto": "Mal posso esperar para testar.",
+          "like": 3
+        }
+      ]
+    },
+    {
+      "titulo": "Atualização de segurança",
+      "texto": "Implementamos uma atualização de segurança importante.",
+      "avatar": "https://example.com/avatar2.jpg",
+      "usuáriodocmentario": "carlos_oliveira",
+      "like": 8,
+      "comentario": [
+        {
+          "usuáriodocmentario": "paula_fernandes",
+          "texto": "Obrigado pelo aviso!",
+          "like": 1
+        },
+        {
+          "usuáriodocmentario": "rogerio_matos",
+          "texto": "Segurança é fundamental.",
+          "like": 2
+        }
+      ]
+    },
+    {
+      "titulo": "Dicas para produtividade",
+      "texto": "Aqui estão algumas dicas para melhorar sua produtividade no trabalho.",
+      "avatar": "https://example.com/avatar3.jpg",
+      "usuáriodocmentario": "mariana_silva",
+      "like": 15,
+      "comentario": [
+        {
+          "usuáriodocmentario": "lucas_ferreira",
+          "texto": "Muito útil, obrigado!",
+          "like": 4
+        },
+        {
+          "usuáriodocmentario": "claudia_gomes",
+          "texto": "Vou aplicar essas dicas.",
+          "like": 5
+        }
+      ]
+    },
+    {
+      "titulo": "Evento anual",
+      "texto": "Nosso evento anual será realizado no próximo mês.",
+      "avatar": "https://example.com/avatar4.jpg",
+      "usuáriodocmentario": "renato_souza",
+      "like": 20,
+      "comentario": [
+        {
+          "usuáriodocmentario": "juliana_pinto",
+          "texto": "Estou ansiosa para participar!",
+          "like": 7
+        },
+        {
+          "usuáriodocmentario": "felipe_rocha",
+          "texto": "Contando os dias.",
+          "like": 6
+        }
+      ]
+    },
+    {
+      "titulo": "Parceria estratégica",
+      "texto": "Firmamos uma nova parceria estratégica com uma empresa líder do setor.",
+      "avatar": "https://example.com/avatar5.jpg",
+      "usuáriodocmentario": "bruna_martins",
+      "like": 18,
+      "comentario": [
+        {
+          "usuáriodocmentario": "gustavo_almeida",
+          "texto": "Parabéns pela parceria!",
+          "like": 5
+        },
+        {
+          "usuáriodocmentario": "roberta_ramos",
+          "texto": "Excelente notícia!",
+          "like": 3
+        }
+      ]
+    },
+    {
+      "titulo": "Novo blog post",
+      "texto": "Confira nosso novo post no blog sobre as tendências do mercado.",
+      "avatar": "https://example.com/avatar6.jpg",
+      "usuáriodocmentario": "andre_barbosa",
+      "like": 12,
+      "comentario": [
+        {
+          "usuáriodocmentario": "camila_souza",
+          "texto": "Ótimo artigo!",
+          "like": 4
+        },
+        {
+          "usuáriodocmentario": "ricardo_lima",
+          "texto": "Muito informativo.",
+          "like": 3
+        }
+      ]
+    },
+    {
+      "titulo": "Pesquisa de satisfação",
+      "texto": "Gostaríamos de saber sua opinião sobre nossos serviços. Participe da nossa pesquisa de satisfação.",
+      "avatar": "https://example.com/avatar7.jpg",
+      "usuáriodocmentario": "daniela_oliveira",
+      "like": 6,
+      "comentario": [
+        {
+          "usuáriodocmentario": "fabio_silva",
+          "texto": "Pesquisa respondida!",
+          "like": 1
+        },
+        {
+          "usuáriodocmentario": "leticia_mendes",
+          "texto": "Adoro participar dessas pesquisas.",
+          "like": 2
+        }
+      ]
+    },
+    {
+      "titulo": "Workshop online",
+      "texto": "Participe do nosso workshop online sobre inovação tecnológica.",
+      "avatar": "https://example.com/avatar8.jpg",
+      "usuáriodocmentario": "eduardo_pereira",
+      "like": 9,
+      "comentario": [
+        {
+          "usuáriodocmentario": "fernanda_oliveira",
+          "texto": "Já estou inscrita!",
+          "like": 3
+        },
+        {
+          "usuáriodocmentario": "rodrigo_santos",
+          "texto": "Grande oportunidade de aprendizado.",
+          "like": 2
+        }
+      ]
+    },
+    {
+      "titulo": "Nova funcionalidade",
+      "texto": "Acabamos de adicionar uma nova funcionalidade à nossa plataforma.",
+      "avatar": "https://example.com/avatar9.jpg",
+      "usuáriodocmentario": "patricia_ramos",
+      "like": 14,
+      "comentario": [
+        {
+          "usuáriodocmentario": "joana_silva",
+          "texto": "Adorei a novidade!",
+          "like": 4
+        },
+        {
+          "usuáriodocmentario": "thiago_fernandes",
+          "texto": "Testando agora mesmo.",
+          "like": 3
+        }
+      ]
+    },
+    {
+      "titulo": "Sessão de perguntas e respostas",
+      "texto": "Teremos uma sessão de perguntas e respostas ao vivo com nosso CEO.",
+      "avatar": "https://example.com/avatar10.jpg",
+      "usuáriodocmentario": "marcelo_alves",
+      "like": 11,
+      "comentario": [
+        {
+          "usuáriodocmentario": "adriana_souza",
+          "texto": "Não perco por nada!",
+          "like": 3
+        },
+        {
+          "usuáriodocmentario": "antonio_gomes",
+          "texto": "Ótima oportunidade para tirar dúvidas.",
+          "like": 2
+        }
+      ]
+    }
+  ]
