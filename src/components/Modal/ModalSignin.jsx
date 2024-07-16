@@ -2,22 +2,28 @@ import ReactModal from "react-modal";
 import { useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { StyledModalOverlayd, StyledModalContent } from "./ModalSigninStyled";
-import * as Yup from 'yup';
+import z from 'zod'
+import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
 
-
-const ModalSignin = ({modalIsOpen, closeModal, openRegisterModal}) => {
+const ModalSignin = ({ modalIsOpen, closeModal, openRegisterModal }) => {
     ReactModal.setAppElement('#root');
 
-    // parei na validação dos campos
-    const schemaSignin = Yup.object().shape({
-        email: Yup.string()
-        .email()
-        .required('O E-mail é obrigatório'),
+    const signinSchema = z.object({
+        email: z.string().email({ message: "Email inválido" }),
+        password: z.string().min(6, { message: "A senha deve ter pelo menos 6 caracteres" }),
+      });
 
-        senha: Yup.string()
-        .min(4, 'A senha deve ter pelo menos 4 caracteres')
-        .required('A senha é obrigatória')
-    })
+      const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: zodResolver(signinSchema)
+      });
+
+
+    const onSubmit = (data) => {
+        console.log('Formulário enviado com sucesso', data);
+    }
+
+
 
     return (
         <>
@@ -32,7 +38,7 @@ const ModalSignin = ({modalIsOpen, closeModal, openRegisterModal}) => {
 
                 <StyledModalOverlayd>
                     <StyledModalContent>
-                        <form>
+                        <form  onSubmit={handleSubmit(onSubmit)}>
                             <div className="box-btn-close">
                                 <button className="btn-close" type="button" onClick={closeModal}>
                                     <IoIosCloseCircle />
@@ -40,23 +46,27 @@ const ModalSignin = ({modalIsOpen, closeModal, openRegisterModal}) => {
                             </div>
                             <h2>Login</h2>
                             <label>
-                                <input 
-                                    type="text" 
-                                    name="email" 
-                                    className="input-email" 
-                                    placeholder="digite seu e-mail" 
-                                    
-                                    />
+                                <input
+                                    type="text"
+                                    name="email"
+                                    {...register("email")}
+                                    className="input-email"
+                                    placeholder="digite seu e-mail"
+
+                                />
+                                 {errors.email && <p>{errors.email.message}</p>}
                             </label>
                             <label>
-                                <input 
-                                    type="password" 
-                                    name="password" 
-                                    className="input-password" 
+                                <input
+                                    type="password"
+                                    name="password"
+                                    {...register("password")}
+                                    className="input-password"
                                     placeholder="digite sua senha" />
+                                     {errors.password && <p>{errors.password.message}</p>}
                             </label>
                             <div className="box-btn-signin">
-                                <button type="submit" className="btn-signin">Entrar</button>
+                            <button type="submit" className="btn-signin">Entrar</button>
                                 <span onClick={openRegisterModal} type="submit">Cadastre-se</span>
                             </div>
                         </form>
