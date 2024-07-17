@@ -37,6 +37,11 @@ export const StyledModalSignupContent = styled.div`
 
   label {
     margin-bottom: 10px;
+
+    p {
+      color: red;
+      font-size: .8rem;
+    }
   }
 
   input {

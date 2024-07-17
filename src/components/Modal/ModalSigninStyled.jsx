@@ -37,6 +37,11 @@ export const StyledModalContent = styled.div`
 
   label {
     margin-bottom: 10px;
+
+    p {
+      color: red;
+      font-size: .8rem;
+    }
   }
 
   input {
@@ -46,6 +51,7 @@ export const StyledModalContent = styled.div`
     border: none;
     background-color: #DCDCDC;
     border-radius: 3px;
+
 
     &:focus {
         outline: none;

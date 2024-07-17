@@ -9,10 +9,11 @@ const Search = () => {
 
     return (
         <SectionStyled>
-            {
+
+            {/* {
                 dadosJson.map((item, index) => {
                     return (
-                        <article>
+                        <article key={index}>
                             <div className="card-1">
                                 <h3>{item.titulo}</h3>
                                 <p>{item.texto}</p>
@@ -27,7 +28,7 @@ const Search = () => {
                         </article>
                     )
                 })
-            }
+            } */}
         </SectionStyled>
     )
 }

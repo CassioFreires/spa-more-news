@@ -2,11 +2,12 @@ import { HeaderStyled } from "./HeaderStyled";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import ModalSignup from "../ModalSignup/ModalSignup";
-import  ModalSignin from "../Modal/ModalSignin";
+import ModalSignin from "../Modal/ModalSignin";
 
 import { IoSearchOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { searchNewsByTitleService } from "../../services/news/news.service";
 
 const Header = () => {
 
@@ -14,13 +15,13 @@ const Header = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
-     // Função do Modal de cadastre-se
+    // Função do Modal de cadastre-se
     function openRegisterModal() {
         setIsOpen(false)
         setIsRegisterModalOpen(true);
     }
 
-    function closeRegisterModal(){
+    function closeRegisterModal() {
         setIsRegisterModalOpen(false);
     }
 
@@ -32,19 +33,41 @@ const Header = () => {
     function closeModalSignin() {
         setIsOpen(false);
     }
+    const [items, setItems] = useState(null);
+    const [title, setTitle] = useState('');
+    const [searchTitle, setSearchTitle] = useState('');
+    const [msgError, setMsgError] = useState('');
 
-    const handleClick = (e) => {
+    const submitTitle = (e) => {
         navigate('/search')
+        setSearchTitle(title)
     }
+
+    useEffect(() => {
+        async function teste(){
+            if(searchTitle !== '') {
+                const news = await searchNewsByTitleService(searchTitle);
+                setItems(news)
+                console.log(items)
+            } 
+        }
+        teste()
+    }, [searchTitle])
 
     return (
         <HeaderStyled>
-            <ModalSignin modalIsOpen={modalIsOpen} closeModal={closeModalSignin} openRegisterModal={openRegisterModal}/>
-            <ModalSignup modalIsOpen={isRegisterModalOpen} closeModal={closeRegisterModal}/>
+            <ModalSignin modalIsOpen={modalIsOpen} closeModal={closeModalSignin} openRegisterModal={openRegisterModal} />
+            <ModalSignup modalIsOpen={isRegisterModalOpen} closeModal={closeRegisterModal} />
             <nav>
                 <div className="nav-header-1">
-                    <Input type="text" placeholder={'Search news by title'} />
-                    <button onClick={(e) => handleClick(e)}><IoSearchOutline className="icon-search" /></button>
+                    <Input 
+                        type="text" 
+                        setTitle = {setTitle}
+                        placeholder={'Digite o titulo da notícia'} 
+                    />
+                    <button onClick={submitTitle}>
+                            <IoSearchOutline className="icon-search" />
+                    </button>
                 </div>
                 <div className="nav-header-2">
                     <Link to={'/'}><img src="/images/logo.png" alt="imagem do logo" /></Link>

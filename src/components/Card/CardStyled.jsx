@@ -1,33 +1,61 @@
 import styled from "styled-components";
 
 export const ArticleStyled = styled.section`
-
-        &:nth-child(1) {
-            width: 100%;
-            background-color: #fff;
-            display: flex;
-            flex-direction: row;
-            height: 500px;
-
-            .card-1 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: start;
-            }
-        }
-    
     display: flex;
     flex-direction: row;
-    width: 35%;
+    width: 45%;
+    height: 300px;
     margin: 20px auto;
     padding: 5px;
     background-color: #fff;
 
+        &:nth-child(1) {
+            width: 100%;
+            background-color: #fff;
+            height: 400px;
+
+            .card-1 {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+
+                .card-sub-1 {
+                    height:100%;
+                    p{
+                      margin-top: 1rem;
+                    }
+                }
+                .card-sub-2{
+                  width: 100%;
+
+                   span{
+                    margin-left: 1rem;
+                    font-size: .8rem;
+                   }
+                }
+            }
+
+        }
 
     .card-1 {
-    width: 70%;
-    padding: 10px;
+      width: 70%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    .card-sub-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    .card-sub-2 {
+      width: 100%;
+
+      span {
+        font-size: .7rem;
+      }
+    }
 
     div {
       display: flex;

@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif; /* Escolha uma fonte padrão */
-  background-color: #f5f5f5; /* Escolha uma cor de fundo neutra */
+  background-color: hsl(0, 0%, 86%); /* Escolha uma cor de fundo neutra */
   color: #333; /* Defina uma cor padrão para o texto */
   line-height: 1.6; /* Melhora a legibilidade */
   width: 100%;
