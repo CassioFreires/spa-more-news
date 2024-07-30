@@ -1,15 +1,7 @@
-import { ArticleStyled } from "./CardStyled";
-import { SlLike } from "react-icons/sl";
-import { FaRegCommentAlt, FaWhatsapp } from "react-icons/fa";
-import { FaRegShareFromSquare } from "react-icons/fa6";
-import { IoSend } from "react-icons/io5";
-
-
-
-const Card = ({ title, text, banner, user, avatar, likes, comments, creatAt }) => {
-    return (
-        <ArticleStyled>
-            <div className="card-1">
+const CardSearch = () => {
+ return (
+    <section>
+         <div className="card-1">
                 <div className="card-sub-1">
                     <h3>{title}</h3>
                     <p>{text}</p>
@@ -40,8 +32,8 @@ const Card = ({ title, text, banner, user, avatar, likes, comments, creatAt }) =
                     </figcaption>
                 </figure>
             </div>
-        </ArticleStyled>
-    )
+    </section>
+ )
 }
 
-export default Card;
+export default CardSearch;

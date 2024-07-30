@@ -5,7 +5,7 @@ import ModalSignup from "../ModalSignup/ModalSignup";
 import ModalSignin from "../Modal/ModalSignin";
 
 import { IoSearchOutline } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { searchNewsByTitleService } from "../../services/news/news.service";
 
@@ -34,25 +34,28 @@ const Header = () => {
         setIsOpen(false);
     }
     const [items, setItems] = useState(null);
-    const [title, setTitle] = useState('');
-    const [searchTitle, setSearchTitle] = useState('');
-    const [msgError, setMsgError] = useState('');
+    const [query, setQuery] = useState('');
+    const [queryAlReady, setQueryAlReady] = useState('');
+    const [error, setError] = useState(null);
 
-    const submitTitle = (e) => {
-        navigate('/search')
-        setSearchTitle(title)
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setQueryAlReady(query)
+        navigate(`/search?title=${query}`)
     }
-
+  
     useEffect(() => {
-        async function teste(){
-            if(searchTitle !== '') {
-                const news = await searchNewsByTitleService(searchTitle);
-                setItems(news)
-                console.log(items)
-            } 
-        }
-        teste()
-    }, [searchTitle])
+            if(query) {
+                const news = searchNewsByTitleService(queryAlReady)
+                .then((response) => {
+                    setItems(response)
+                })
+                .catch((error) => {
+                    setError(error)
+                })
+              
+            }
+    }, [queryAlReady])
 
     return (
         <HeaderStyled>
@@ -60,14 +63,17 @@ const Header = () => {
             <ModalSignup modalIsOpen={isRegisterModalOpen} closeModal={closeRegisterModal} />
             <nav>
                 <div className="nav-header-1">
+                   <form onSubmit={handleSearch}>
                     <Input 
-                        type="text" 
-                        setTitle = {setTitle}
-                        placeholder={'Digite o titulo da notícia'} 
-                    />
-                    <button onClick={submitTitle}>
-                            <IoSearchOutline className="icon-search" />
-                    </button>
+                            type="text" 
+                            setQuery={setQuery}
+                            query={query}
+                            placeholder={'Digite o titulo da notícia'} 
+                        />
+                        <button>
+                                <IoSearchOutline className="icon-search" />
+                        </button>
+                   </form>
                 </div>
                 <div className="nav-header-2">
                     <Link to={'/'}><img src="/images/logo.png" alt="imagem do logo" /></Link>

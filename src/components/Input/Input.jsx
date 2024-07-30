@@ -1,9 +1,9 @@
 import { InputStyled } from "./InputStyled"
 
-const Input = ({type, placeholder, setTitle}) => {
+const Input = ({type, placeholder, setQuery, query}) => {
     return (
         <>
-            <InputStyled type={type} placeholder={placeholder} onChange={(e) => setTitle(e.target.value)}/>
+            <InputStyled type={type} placeholder={placeholder} onChange={(e) => setQuery(e.target.value)}/>
         </>
     )
 }

@@ -17,7 +17,7 @@ export const HeaderStyled = styled.header`
         align-items: center;
         justify-content: space-between;
     }
-    .nav-header-1 {
+    .nav-header-1 form{
         display: flex;
         flex-direction: row;
 
